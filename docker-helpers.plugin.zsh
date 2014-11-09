@@ -27,4 +27,11 @@ alias dockerbuild='docker build'
 alias dockerimages='docker images'
 alias dockerps='docker ps'
 
-dkb() { docker build -t="$1" .; }
+dkb() {
+  docker build -t="$1" .
+}
+
+docker-zsh() {
+  local TAG=$1
+  docker run -v /tmp:/host_tmp:rw -i -t $TAG /bin/zsh
+}
