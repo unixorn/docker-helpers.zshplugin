@@ -2,7 +2,7 @@
 
 CONTAINER_LIST=$(docker ps -a -q)
 
-if [ -n ${CONTAINER_LIST} ]; then
+if [ -n "${CONTAINER_LIST}" ]; then
   exec docker rm ${CONTAINER_LIST}
 else
   echo "No containers to clean up"
