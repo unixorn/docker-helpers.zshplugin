@@ -1,0 +1,31 @@
+#!/bin/bash
+#
+# From http://www.tech-d.net/2014/05/05/docker-quicktip-5-backing-up-volumes/
+
+if [ $# != 2 ]; then
+  echo "Usage: $0 containername imagename"
+  exit 1
+fi
+
+volumes_args() {
+  docker inspect --format='-v :/volData ' ${1}
+}
+
+volume_hostPaths() {
+  docker inspect --format='  ' ${1}
+}
+
+volConfig=""
+paths=() # store host paths so we can check if it's already used
+for container in $(docker ps -a -q); do
+  hostPaths=$(volume_hostPaths ${container})
+  for hostPath in $hostPaths; do
+    match=$(echo "${paths[@]:0}" | grep -o ${hostPath})
+    if [[ "${match}" == "" ]]; then
+      paths+=(${hostPath})
+      volConfig="${volConfig} $(volumes_args ${container})"
+    fi
+  done
+done
+
+docker run -d ${volConfig} --name $1 $2
