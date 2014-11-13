@@ -1,0 +1,3 @@
+#!/bin/sh
+
+exec docker ps -l -q
