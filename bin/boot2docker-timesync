@@ -1,3 +1,6 @@
 #!/bin/sh
+#
+# Author: Joe Block <jpb@unixorn.net>
+# License: Apache 2 (See LICENSE file)
 
 exec boot2docker ssh sudo ntpclient -s -h pool.ntp.org

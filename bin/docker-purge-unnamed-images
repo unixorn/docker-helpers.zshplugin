@@ -1,4 +1,7 @@
 #!/bin/sh
+#
+# Author: Joe Block <jpb@unixorn.net>
+# License: Apache 2 (See LICENSE file)
 
 exec docker images | \
   grep \<none\> | \
