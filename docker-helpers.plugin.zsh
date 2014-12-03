@@ -31,7 +31,46 @@ dkb() {
   docker build -t="$1" .
 }
 
+docker-ip() {
+  docker inspect --format "{{ .NetworkSettings.IPAddress }}" $1
+}
+
+docker-pid() {
+  docker inspect --format "{{ .State.Pid }}" $1
+}
+
 docker-zsh() {
   local TAG=$1
   docker run -v /tmp:/host_tmp:rw -i -t $TAG /bin/zsh
+}
+
+dps-monitor() {
+   while true
+   do
+       clear
+       docker ps | cut -c -$(tput cols)
+       sleep 0.5
+   done
+}
+
+# helpers for starting a container with access to the current directory
+
+docker-busybox() {
+  docker run -v $(pwd):/shared --rm -it busybox:latest /bin/sh
+}
+
+docker-centos() {
+  docker run -v $(pwd):/shared --rm -it centos:centos7 /bin/bash
+}
+
+docker-centos6() {
+  docker run -v $(pwd):/shared --rm -it centos:centos6 /bin/bash
+}
+
+docker-fedora() {
+  docker run -v $(pwd):/shared --rm -it fedora:20 /bin/bash
+}
+
+docker-ubuntu() {
+  docker run -v $(pwd):/shared --rm -it ubuntu:14.04 /bin/bash
 }
