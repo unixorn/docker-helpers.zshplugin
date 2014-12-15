@@ -30,3 +30,7 @@ Command | Description | Credit
 | docker-last | print the id of the last container you ran |
 | docker-purge-unnamed-images | Cleans up image cruft by deleting all the images that aren't named. |
 | docker-superclean | Clear out any stopped containers or stale images |
+
+# Other useful Docker stuff
+
+If you use Sublime Text 2/3, check out [sublime-docker](https://github.com/dockerparis/sublime-docker).
