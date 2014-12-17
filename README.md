@@ -33,4 +33,4 @@ Command | Description | Credit
 
 # Other useful Docker stuff
 
-If you use Sublime Text 2/3, check out [sublime-docker](https://github.com/dockerparis/sublime-docker).
+If you use [Sublime Text 2/3](http://sublimetext.com), check out [sublime-docker](https://github.com/dockerparis/sublime-docker). Lets you build inside Docker containers directly from [Sublime Text](http://sublimetext.com).
