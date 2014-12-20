@@ -1,0 +1,20 @@
+# Regular ignores
+*.bak
+*.bz2
+*.gz
+*.lock
+*.log
+*.pyc
+*.pyo
+*.rpm
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.tar
+*.tgz
+*deploy.log
+.*~
+.DS_Store
+.kitchen
+.rake_tasks
+.rbenv*
