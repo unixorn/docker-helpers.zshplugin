@@ -19,6 +19,9 @@ plugins=( ... docker-helpers ...)
 ...
 ```
 
+## zgen
+Add `zgen load unixorn/docker-helpers.zshplugin` to your `.zshrc` where you're loading your other plugins.
+
 # Docker helper scripts
 
 Command | Description | Credit
