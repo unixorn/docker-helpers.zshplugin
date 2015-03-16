@@ -1,3 +1,17 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [docker-helpers](#docker-helpers)
+- [Installing](#installing)
+  - [Antigen](#antigen)
+  - [Oh-My-Zsh](#oh-my-zsh)
+  - [zgen](#zgen)
+- [Docker helper scripts](#docker-helper-scripts)
+- [Other useful Docker stuff](#other-useful-docker-stuff)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # docker-helpers
 
 This is a collection of docker helper scripts, packaged as a zsh plugin to make it easier to use with [antigen](https://github.com/zsh-users/antigen).
