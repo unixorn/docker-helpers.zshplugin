@@ -33,15 +33,15 @@ then
     docker build -t="$1" .
   }
 
-  docker-ip() {
+  d-ip() {
     docker inspect --format "{{ .NetworkSettings.IPAddress }}" $1
   }
 
-  docker-pid() {
+  d-pid() {
     docker inspect --format "{{ .State.Pid }}" $1
   }
 
-  docker-zsh() {
+  d-zsh() {
     local TAG=$1
     docker run -v /tmp:/host_tmp:rw -i -t $TAG /bin/zsh
   }
@@ -57,23 +57,23 @@ then
 
   # helpers for starting a container with access to the current directory
 
-  docker-busybox() {
+  d-busybox() {
     docker run -v $(pwd):/shared --rm -it busybox:latest /bin/sh
   }
 
-  docker-centos() {
+  d-centos() {
     docker run -v $(pwd):/shared --rm -it centos:centos7 /bin/bash
   }
 
-  docker-centos6() {
+  d-centos6() {
     docker run -v $(pwd):/shared --rm -it centos:centos6 /bin/bash
   }
 
-  docker-fedora() {
+  d-fedora() {
     docker run -v $(pwd):/shared --rm -it fedora:20 /bin/bash
   }
 
-  docker-ubuntu() {
+  d-ubuntu() {
     docker run -v $(pwd):/shared --rm -it ubuntu:14.04 /bin/bash
   }
 fi
