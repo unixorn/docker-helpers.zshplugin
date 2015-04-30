@@ -18,27 +18,41 @@ then
   PLUGIN_D="$(dirname $0)"
   export PATH=${PATH}:${PLUGIN_D}/bin
 
+  alias d='docker'
   # Most of these aliases are from http://www.kartar.net/2014/03/some-useful-docker-bash-functions-and-aliases/
-  alias dkd="docker run -d -P"
-  alias dki="docker run -t -i -P"
+  alias dkd='docker run -d -P'
+  alias dki='docker run -t -i -P'
   alias dkl='docker ps -l -q'
-  alias docker-daemonize="docker run -d -P"
-  alias docker-interactive="docker run -t -i -P"
+  alias docker-daemonize='docker run -d -P'
+  alias docker-interactive='docker run -t -i -P'
   alias docker-last='docker ps -l -q'
   alias dockerbuild='docker build'
   alias dockerimages='docker images'
   alias dockerps='docker ps'
 
-  dkb() {
-    docker build -t="$1" .
-  }
-
   d-ip() {
     docker inspect --format "{{ .NetworkSettings.IPAddress }}" $1
   }
 
+  dkb() {
+    docker build -t="$1" .
+  }
+
   d-pid() {
     docker inspect --format "{{ .State.Pid }}" $1
+  }
+
+  d-purge() {
+    docker rm $(docker ps -a -q);
+  }
+
+  d-stats() {
+    docker ps -q | xargs docker stats
+  }
+
+  d-stop() {
+    # Stop all running containers
+    docker stop $(docker ps -a -q);
   }
 
   d-zsh() {
@@ -78,3 +92,7 @@ then
   }
 fi
 
+if (which docker-compose > /dev/null)
+then
+  alias d-cp=docker-compose
+fi
