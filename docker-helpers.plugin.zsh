@@ -19,6 +19,7 @@ then
   export PATH=${PATH}:${PLUGIN_D}/bin
 
   alias d='docker'
+
   # Most of these aliases are from http://www.kartar.net/2014/03/some-useful-docker-bash-functions-and-aliases/
   alias dkd='docker run -d -P'
   alias dki='docker run -t -i -P'
@@ -36,6 +37,18 @@ then
 
   dkb() {
     docker build -t="$1" .
+  }
+
+  d-grep() {
+    docker ps | grep $@ | grep -v ^CONTAINER
+  }
+
+  d-kill-pattern() {
+    docker ps \
+      | grep $@ \
+      | grep -v ^CONTAINER \
+      | awk '{print $1}' \
+      | xargs -rI % bash -c 'echo $(docker kill %; echo "killed!");'
   }
 
   d-pid() {
