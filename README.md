@@ -34,7 +34,7 @@ plugins=( ... docker-helpers ...)
 ```
 
 ## zgen
-Add `zgen load unixorn/docker-helpers.zshplugin` to your `.zshrc` where you're loading your other plugins.
+Add `zgen load unixorn/docker-helpers.zshplugin` to your `.zshrc` wherever you're loading your other plugins.
 
 # Docker helper scripts
 
@@ -44,6 +44,7 @@ Command | Description | Credit
 | docker-container-volumes | List the volumes attached to a container | [http://www.tech-d.net/2014/05/05/docker-quicktip-5-backing-up-volumes/](http://www.tech-d.net/2014/05/05/docker-quicktip-5-backing-up-volumes/))
 | docker-create-backup-container | Creates a container with all the volumes from all the containers on the host | [From http://www.tech-d.net/2014/05/05/docker-quicktip-5-backing-up-volumes/](From http://www.tech-d.net/2014/05/05/docker-quicktip-5-backing-up-volumes/)
 | docker-delete-stopped-containers | Cleans up stale stopped containers |
+| docker-enter | Install/Run jpetazzo's nsenter |
 | docker-last | print the id of the last container you ran |
 | docker-purge-unnamed-images | Cleans up image cruft by deleting all the images that aren't named. |
 | docker-superclean | Clear out any stopped containers or stale images |
