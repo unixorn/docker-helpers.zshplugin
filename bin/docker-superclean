@@ -18,3 +18,5 @@ if [ -n "${IMAGE_LIST}" ]; then
 else
   echo "No stale images to clean"
 fi
+
+docker images | grep "<none>" | awk '{print $3}' | xargs docker rmi
