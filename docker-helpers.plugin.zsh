@@ -1,4 +1,4 @@
-# Copyright 2014-2017 Joseph Block <jpb@unixorn.net>
+# Copyright 2014-2018 Joseph Block <jpb@unixorn.net>
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -109,3 +109,7 @@ if (which docker-compose &> /dev/null)
 then
   alias d-cp=docker-compose
 fi
+
+function docker-tags(){
+  curl -s -S "https://registry.hub.docker.com/v2/repositories/$@/tags/" | jq '."results"[]["name"]' |sort
+}

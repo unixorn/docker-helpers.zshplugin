@@ -20,6 +20,10 @@ Most of these were collected from blog posts, gists, etc, and I've given credit 
 
 # Installing
 
+## Pre-Requisites
+
+`jq` - Install with `brew install jq`
+
 ## Antigen
 Add `antigen bundle unixorn/docker-helpers.zshplugin` to your `.zshrc` with your other plugins. You can test drive them without editing your .zshrc by running `antigen bundle unixorn/docker-helpers.zshplugin` in a running zsh session.
 
