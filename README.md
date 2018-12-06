@@ -56,4 +56,5 @@ Command | Description | Credit
 
 # Other useful Docker stuff
 
-If you use [Sublime Text 2/3](http://sublimetext.com), check out [sublime-docker](https://github.com/dockerparis/sublime-docker). Lets you build inside Docker containers directly from [Sublime Text](http://sublimetext.com).
+* If you use [Sublime Text 2/3](http://sublimetext.com), check out [sublime-docker](https://github.com/dockerparis/sublime-docker). Lets you build inside Docker containers directly from [Sublime Text](http://sublimetext.com).
+* [dive](https://github.com/wagoodman/dive) - A tool for exploring a docker image, layer contents, and discovering ways to shrink your Docker image size.
