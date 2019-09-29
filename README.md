@@ -52,6 +52,9 @@ Command | Description | Credit
 | docker-enter | Install/Run jpetazzo's nsenter |
 | docker-last | print the id of the last container you ran |
 | docker-purge-unnamed-images | Cleans up image cruft by deleting all the images that aren't named. |
+| docker-runinc | Uses fzf to select a running container and run a command in it |
+| docker-showipc | Show the IP of a running docker container |
+| docker-stopc | Stops and/or removes a docker container |
 | docker-superclean | Clear out any stopped containers or stale images |
 
 # Other useful Docker stuff
