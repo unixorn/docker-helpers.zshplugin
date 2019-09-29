@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # From http://www.tech-d.net/2014/05/05/docker-quicktip-5-backing-up-volumes/
 

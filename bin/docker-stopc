@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # Fron https://medium.com/@calbertts/docker-and-fuzzy-finder-fzf-4c6416f5e0b5
 #
