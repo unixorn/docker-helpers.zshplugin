@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+#
+# Show the IP of a running docker container
+#
+# From Carlos Alberto's https://medium.com/@calbertts/docker-and-fuzzy-finder-fzf-4c6416f5e0b5 article
+#
+# Copyright 2019, Carlos Alberto
+
+set -o pipefail
+
+showipc() {
+  export FZF_DEFAULT_OPTS='--height 90% --reverse --border'
+  local container=$(docker ps -a --format '{{.Names}} => {{.Image}}' | fzf-tmux --reverse --multi | awk -F '\\=>' '{print $1}')
+
+  if [[ $container != '' ]]; then
+    local network=$(docker inspect $container -f '{{.NetworkSettings.Networks}}' | awk -F 'map\\[|:' '{print $2}')
+    echo -e "\n  \033[1mDocker container:\033[0m" $container
+    history -s showipc
+    history -s docker inspect -f "{{.NetworkSettings.Networks.${network}.IPAddress}}" $container
+    echo -e "  \033[1mNetwork:\033[0m" $network
+    echo -e "  \033[1mIP Address:\033[0m" $(docker inspect -f "{{.NetworkSettings.Networks.${network}.IPAddress}}" $container) "\n"
+  fi
+}
+
+showipc $@

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 myname=$(basename "$0")
 if [ $# -lt 1 ]
@@ -7,7 +7,7 @@ cat << HELP
 
 $myname  --  list all tags for a Docker image on a remote registry.
 
-EXAMPLE: 
+EXAMPLE:
     - list all tags for ubuntu:
        $myname ubuntu
 

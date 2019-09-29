@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+#
+# https://medium.com/@calbertts/docker-and-fuzzy-finder-fzf-4c6416f5e0b5
+#
+# Use fzf to select a running container and run a command in it
+
+runinc() {
+  export FZF_DEFAULT_OPTS='--height 90% --reverse --border'
+  local container=$(docker ps --format '{{.Names}} => {{.Image}}' | fzf-tmux --reverse --multi | awk -F '\\=>' '{print $1}')
+  if [[ $container != '' ]]; then
+    echo -e "\n  \033[1mDocker container:\033[0m" $container
+    read -e -p $'  \e[1mOptions: \e[0m' -i "-it" options
+    if [[ $@ == '' ]]; then
+				read -e -p $'  \e[1mCommand: \e[0m' cmd
+    else
+				cmd="$@"
+    fi
+    echo ''
+    history -s runinc "$@"
+    history -s docker exec $options $container $cmd
+    docker exec $options $container $cmd
+    echo ''
+  fi
+  export FZF_DEFAULT_OPTS=""
+}
+
+runinc $@

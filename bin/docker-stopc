@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+#
+# Fron https://medium.com/@calbertts/docker-and-fuzzy-finder-fzf-4c6416f5e0b5
+#
+# Stops and/or removes a docker container
+
+stopc() {
+  export FZF_DEFAULT_OPTS='--height 90% --reverse --border'
+  local container=$(docker ps --format '{{.Names}} => {{.Image}}' | fzf-tmux --reverse --multi | awk -F '\\=>' '{print $1}')
+  if [[ $container != '' ]]; then
+    echo -e "\n  \033[1mDocker container:\033[0m" $container
+    printf "  \033[1mRemove?: \033[0m"
+    local cmd=$(echo -e "No\nYes" | fzf-tmux --reverse --multi)
+    if [[ $cmd != '' ]]; then
+      if [[ $cmd == 'No' ]]; then
+        echo -e "\n  Stopping $container ...\n"
+        history -s stopc
+        history -s docker stop $container
+        docker stop $container > /dev/null
+      else
+        echo -e "\n  Stopping $container ..."
+        history -s stopc
+        history -s docker stop $container
+        docker stop $container > /dev/null
+
+        echo -e "  Removing $container ...\n"
+        history -s stopc
+        history -s docker rm $container
+        docker rm $container > /dev/null
+      fi
+    fi
+  fi
+  export FZF_DEFAULT_OPTS=""
+}
+
+stopc $@
