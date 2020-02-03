@@ -3,7 +3,9 @@
 # Author: Joe Block <jpb@unixorn.net>
 # License: Apache 2 (See LICENSE file)
 
-exec docker images | \
+set -o pipefail
+
+docker images | \
   grep \<none\> | \
   awk '{print $3}' | \
   xargs docker rmi
