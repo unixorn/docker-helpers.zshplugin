@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+#
+# Remove dangling docker images
+#
+# Copyright 2020, Joe Block <jpb@unixorn.net>
+
+set -o pipefail
+
+function docker-remove-dangling-images {
+  if [[ $(uname -s) -eq "Darwin" ]]; then
+    docker images -f 'dangling=true' -q | awk '{print $1}' | xargs -n 1 docker rmi
+  else
+    docker images -f 'dangling=true' -q | awk '{print $1}' | xargs -r -n 1 docker rmi
+  fi
+}
+
+docker-remove-dangling-images
