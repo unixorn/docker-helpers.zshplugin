@@ -31,7 +31,9 @@ Command | Description | Credit
 | `docker-delete-stopped-containers` | Cleans up stale stopped containers. |
 | `docker-enter` | Install/Run jpetazzo's `nsenter`. |
 | `docker-last` | print the id of the last container you ran. |
+| `docker-ps-cleanup` | Cleans up `docker ps` output by deleting all exited containers. |
 | `docker-purge-unnamed-images` | Cleans up image cruft by deleting all the images that aren't named. |
+| `docker-remove-dangling-images` | Cleans up image cruft by deleting all dangling images. |
 | `docker-runinc` | Uses [fzf](https://github.com/junegunn/fzf) to select a running container and run a command inside it. |
 | `docker-showipc` | Show the IP of a running docker container. |
 | `docker-stopc` | Stops and/or removes a docker container. |

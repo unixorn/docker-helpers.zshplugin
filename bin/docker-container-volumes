@@ -2,4 +2,4 @@
 #
 # From http://www.tech-d.net/2014/05/05/docker-quicktip-5-backing-up-volumes/
 
-exec docker inspect --format='-v :/volData ' $1
+exec docker inspect --format='-v :/volData ' $*
