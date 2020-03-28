@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
 #
-# Update all the images on a machine
+# Update all the images on a machine, in increasing size order
 #
-# Copyright 2019, Joe Block <jpb@unixorn.net>
+# Copyright 2019-2020, Joe Block <jpb@unixorn.net>
 
 set -o pipefail
 
 function docker-update-images {
   if [[ $(uname -s) -eq "Darwin" ]]; then
-    docker images | grep -v REPOSITORY | grep -v none | awk '{print $1":"$2};' | xargs -n 1 docker pull
+    docker images | grep -v REPOSITORY | grep -v none | awk '{print $7 " " $1":"$2}' | sort -h | awk '{print $2}'| xargs -n 1 docker pull
   else
-    docker images | grep -v REPOSITORY | grep -v none | awk '{print $1":"$2};' | xargs -r -n 1 docker pull
+    docker images | grep -v REPOSITORY | grep -v none | awk '{print $7 " " $1":"$2}' | sort -h | awk '{print $2}'| xargs -r -n 1 docker pull
   fi
 }
 
