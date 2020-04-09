@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#
+# Lint a dockerfile with hadolint
+#
+# Copyright 2020, Joe Block <jpb@unixorn.net>
+
+set -o pipefail
+
+exec docker run --rm -i hadolint/hadolint < "$@"
