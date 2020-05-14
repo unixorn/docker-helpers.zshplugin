@@ -26,6 +26,7 @@ If you wrote something I've collected and I didn't credit you, please create an 
 Command | Description | Credit
 ------- | ----------- | ------
 | `boot2docker-timesync` | boot2docker drifts out of time sync every time my MacBook Pro sleeps. Run this to resync. |
+| `dive` | Wrapper script that calls wagoodman/dive to analyze a container image. |
 | `docker-container-volumes` | List the volumes attached to a container. | [http://www.tech-d.net/2014/05/05/docker-quicktip-5-backing-up-volumes/](http://www.tech-d.net/2014/05/05/docker-quicktip-5-backing-up-volumes/))
 | `docker-create-backup-container` | Creates a container with all the volumes from all the containers on the host. | [From http://www.tech-d.net/2014/05/05/docker-quicktip-5-backing-up-volumes/](From http://www.tech-d.net/2014/05/05/docker-quicktip-5-backing-up-volumes/)
 | `docker-delete-stopped-containers` | Cleans up stale stopped containers. |

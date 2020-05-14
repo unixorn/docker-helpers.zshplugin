@@ -1,4 +1,4 @@
-# Copyright 2014-2019 Joseph Block <jpb@unixorn.net>
+# Copyright 2014-2020 Joseph Block <jpb@unixorn.net>
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
