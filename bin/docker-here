@@ -1,0 +1,10 @@
+#!/bin/bash
+#
+# Build and run an ephemeral docker image without making me remember the
+# commands to do so. Based on a discussion on hangops slack.
+
+IMAGE_ID=$(docker build -q .)
+docker run --rm -it "$IMAGE_ID" "$@"
+retval=$?
+docker rmi $IMAGE_ID
+exit $retval
