@@ -31,6 +31,7 @@ Command | Description | Credit
 | `docker-create-backup-container` | Creates a container with all the volumes from all the containers on the host. | [From http://www.tech-d.net/2014/05/05/docker-quicktip-5-backing-up-volumes/](From http://www.tech-d.net/2014/05/05/docker-quicktip-5-backing-up-volumes/)
 | `docker-delete-stopped-containers` | Cleans up stale stopped containers. |
 | `docker-enter` | Install/Run jpetazzo's `nsenter`. |
+| `docker-here` | Builds an ephemeral container, runs it with the parameters you pass `docker-here`, then deletes the ephemeral container |
 | `docker-last` | Print the id of the last container you ran. |
 | `docker-lint` | Lint a Dockerfile with [hadolint](https://github.com/hadolint/hadolint). |
 | `docker-ps-cleanup` | Cleans up `docker ps` output by deleting all exited containers. |
