@@ -4,8 +4,7 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
 
-- [docker-helpers](#docker-helpers)
-- [Docker helper scripts](#docker-helper-scripts)
+- [Script list](#script-list)
 - [Installing](#installing)
   - [Pre-Requisites](#pre-requisites)
   - [zgen](#zgen)
@@ -15,15 +14,13 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-# docker-helpers
-
 This is a collection of docker helper scripts, packaged as a zsh plugin to make it easier to use with [antigen](https://github.com/zsh-users/antigen).
 
 Most of these were collected from blog posts, gists, slack - basically stuff I saw and thought was useful enough to stash away, and I've given credit where I know the source.
 
 If you wrote something I've collected and I didn't credit you, please create an issue or PR so I can correct it.
 
-# Docker helper scripts
+## Script list
 
 Command | Description | Credit
 ------- | ----------- | ------
@@ -48,21 +45,21 @@ Command | Description | Credit
 | `docker-superclean` | Clear out any stopped containers or stale images. |
 | `docker-update-all-images` | Update all images on the machine. |
 
-# Installing
+## Installing
 
-## Pre-Requisites
+### Pre-Requisites
 
 `jq` - Install with `brew install jq`
 
-## zgen
+### zgen
 
 Add `zgen load unixorn/docker-helpers.zshplugin` to your `.zshrc` wherever you're loading your other plugins.
 
-## Antigen
+### Antigen
 
 Add `antigen bundle unixorn/docker-helpers.zshplugin` to your `.zshrc` with your other plugins. You can test drive them without editing your .zshrc by running `antigen bundle unixorn/docker-helpers.zshplugin` in a running zsh session.
 
-## Oh-My-Zsh
+### Oh-My-Zsh
 
 1. cd to your `oh-my-zsh` plugins directory (~/.oh-my-zsh/custom/plugins)
 2. `git clone https://github.com/unixorn/docker-helpers.zshplugin docker-helpers`
@@ -73,7 +70,7 @@ plugins=( ... docker-helpers ...)
 ...
 ```
 
-# Other useful Docker stuff
+## Other useful Docker stuff
 
 * If you use [Sublime Text 2/3](http://sublimetext.com), check out [sublime-docker](https://github.com/dockerparis/sublime-docker). Lets you build inside Docker containers directly from [Sublime Text](http://sublimetext.com).
 * [dive](https://github.com/wagoodman/dive) - A tool for exploring a docker image, layer contents, and discovering ways to shrink your Docker image size.
