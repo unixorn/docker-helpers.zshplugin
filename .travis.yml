@@ -1,7 +1,0 @@
-language: ruby
-rvm:
-  - 2.2
-before_script:
-  - gem install awesome_bot
-script:
-  - awesome_bot ReadMe.md --allow-dupe --allow-redirect --white-list https://ipfs.io,slideshare,https://img.shields.io,https://codeclimate.com/github/unixorn/docker-helpers.zshplugin,http://www.tech-d.net/2014/05/05/docker-quicktip-5-backing-up-volumes/
