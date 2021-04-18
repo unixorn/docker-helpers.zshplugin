@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+#
+# Run a shell in a docker container
+#
+# Copyright 2021, Joe Block <jpb@unixorn.net>
+
+STANDARD_DOCKER_IMAGE=${STANDARD_DOCKER_IMAGE:-'debian:buster-slim'}
+STANDARD_DOCKER_SHELL=${STANDARD_DOCKER_SHELL:-'bash'}
+
+if [[ "$1" == "--help" ]]; then
+  echo "Usage:"
+  # shellcheck disable=SC2086
+  echo "$(basename $0) optional-image-name optional-command"
+  echo "default is to run $STANDARD_DOCKER_SHELL inside $STANDARD_DOCKER_IMAGE"
+  echo
+  echo "Mounts current directory in container as /pwd"
+  exit 0
+fi
+
+if [[ -n "$1" ]]; then
+  IMAGE="$1"
+else
+  IMAGE="$STANDARD_DOCKER_IMAGE"
+fi
+if [[ -n "$2" ]]; then
+  DOCKER_COMMAND="$2"
+else
+  DOCKER_COMMAND="$STANDARD_DOCKER_SHELL"
+fi
+
+exec docker run -v "$(pwd):/pwd" --rm -it "$IMAGE" "$DOCKER_COMMAND"

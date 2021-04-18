@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#
+# Get pid of a docker container
+#
+# Copyright 2021, Joe Block <jpb@unixorn.net>
+
+exec docker inspect --format "{{ .State.Pid }}" "$1"
