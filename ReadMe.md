@@ -38,6 +38,7 @@ Command | Description | Credit
 | `docker-purge-unnamed-images` | Cleans up image cruft by deleting all the images that aren't named. |
 | `docker-remove-dangling-images` | Cleans up image cruft by deleting all dangling images. |
 | `docker-runinc` | Uses [fzf](https://github.com/junegunn/fzf) to select a running container and run a command inside it. |
+| `docker-shell` | Runs a shell inside a container with `pwd` mounted as `/pwd`. Defaults to bash inside debian:buster-slim, reads shell & image name from `STANDARD_DOCKER_COMMAND` and `STANDARD_DOCKER_IMAGE` or `$1` and `$2`. |
 | `docker-showipc` | Show the IP of a running docker container. |
 | `docker-stopc` | Stops and/or removes a docker container. |
 | `docker-superclean` | Clear out any stopped containers or stale images. |
