@@ -1,4 +1,4 @@
-# Copyright 2014-2020 Joseph Block <jpb@unixorn.net>
+# Copyright 2014-2021 Joseph Block <jpb@unixorn.net>
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -103,6 +103,7 @@ then
   d-ubuntu() {
     docker run -v $(pwd):/shared --rm -it ubuntu:14.04 /bin/bash
   }
+
 fi
 
 if (which docker-compose &> /dev/null)
