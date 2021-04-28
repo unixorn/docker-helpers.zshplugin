@@ -14,7 +14,7 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-This is a collection of docker helper scripts, packaged as a zsh plugin to make it easier to use with [antigen](https://github.com/zsh-users/antigen).
+This is a collection of docker helper scripts, packaged as a ZSH plugin to make it easier to use with frameworks like [zgenom](https://github.com/jandamm/zgenom) and [antigen](https://github.com/zsh-users/antigen).
 
 Most of these were collected from blog posts, gists, slack - basically stuff I saw and thought was useful enough to stash away, and I've given credit where I know the source.
 
@@ -44,6 +44,7 @@ Command | Description | Credit
 | `docker-stopc` | Stops and/or removes a docker container. |
 | `docker-superclean` | Clear out any stopped containers or stale images. |
 | `docker-update-all-images` | Update all images on the machine. |
+| `fzf-docker-attach` | Use [fzf](https://github.com/junegunn/fzf) to select a docker container to start and attach to |
 
 ## Installing
 
