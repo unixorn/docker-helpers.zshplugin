@@ -12,7 +12,7 @@
 - [ ] A link to an external resource like a blog post or video
 - [ ] Text cleanups/updates
 
-# Checklist:
+# Checklist
 
 <!--- Go over all the following points, and put an `x` in all the boxes that apply. [x] -->
 <!--- If you're unsure about any of these, don't hesitate to ask. I'm happy to help! -->
