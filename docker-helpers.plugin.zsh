@@ -103,7 +103,7 @@ then
   d-ubuntu() {
     docker run -v $(pwd):/shared --rm -it ubuntu:14.04 /bin/bash
   }
-
+  
 fi
 
 if (which docker-compose &> /dev/null)
