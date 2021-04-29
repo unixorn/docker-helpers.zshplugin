@@ -45,6 +45,7 @@ Command | Description | Credit
 | `docker-superclean` | Clear out any stopped containers or stale images. |
 | `docker-update-all-images` | Update all images on the machine. |
 | `fzf-docker-attach` | Use [fzf](https://github.com/junegunn/fzf) to select a docker container to start and attach to |
+| `fzf-docker-stop` | Use [fzf](https://github.com/junegunn/fzf) to select a docker container to stop |
 
 ## Installing
 
