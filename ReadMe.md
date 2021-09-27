@@ -1,5 +1,10 @@
 # Docker helper scripts
 
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+![Awesomebot](https://github.com/unixorn/docker-helpers.zshplugin/actions/workflows/awesomebot.yml/badge.svg)
+![Superlinter](https://github.com/unixorn/docker-helpers.zshplugin/actions/workflows/superlinter.yml/badge.svg)
+[![GitHub stars](https://img.shields.io/github/stars/unixorn/docker-helpers.zshplugin.svg)](https://github.com/unixorn/docker-helpers.zshplugin/stargazers)
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
