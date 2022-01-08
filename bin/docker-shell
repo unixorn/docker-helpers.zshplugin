@@ -28,4 +28,4 @@ else
   DOCKER_COMMAND="$STANDARD_DOCKER_SHELL"
 fi
 
-exec docker run -v "$(pwd):/pwd" --rm -it "$IMAGE" "$DOCKER_COMMAND"
+exec docker run -v "$(pwd):/pwd" -w "/pwd" --rm -it "$IMAGE" "$DOCKER_COMMAND"
