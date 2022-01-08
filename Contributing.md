@@ -1,8 +1,8 @@
-## Contributing
+# Contributing
 
 **docker-helpers.zshplugin** is a collection of helper scripts for docker.
 
-# Contribution Guidelines
+## Contribution Guidelines
 
 - **To add a helper script:** Submit a pull request.
 - **To remove a script:** Open an issue to discuss the removal or create a pull request.
