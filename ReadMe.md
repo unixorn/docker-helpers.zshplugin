@@ -34,7 +34,6 @@ Command | Description | Credit
 | `docker-container-volumes` | List the volumes attached to a container. | [http://www.tech-d.net/2014/05/05/docker-quicktip-5-backing-up-volumes/](http://www.tech-d.net/2014/05/05/docker-quicktip-5-backing-up-volumes/))
 | `docker-create-backup-container` | Creates a container with all the volumes from all the containers on the host. | From [http://www.tech-d.net/2014/05/05/docker-quicktip-5-backing-up-volumes/](http://www.tech-d.net/2014/05/05/docker-quicktip-5-backing-up-volumes/)
 | `docker-delete-stopped-containers` | Cleans up stale stopped containers. |
-| `docker-enter` | Install/Run jpetazzo's `nsenter`. |
 | `docker-here` | Builds an ephemeral container, runs it with the parameters you pass `docker-here`, then deletes the ephemeral container. |
 | `docker-ip` | Gets the pid of a running container. |
 | `docker-last` | Print the id of the last container you ran. |
