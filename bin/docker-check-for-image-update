@@ -1,0 +1,37 @@
+#!/bin/bash
+# Original source: https://mlohr.com/check-for-docker-image-updates/
+# Original Author: Mathias Lohr
+# Example usage:
+# ./docker-image-update-check.sh gitlab/gitlab-ce update-gitlab.sh
+
+function has() {
+  which "$@" > /dev/null 2>&1
+}
+
+IMAGE="$1"
+COMMAND="$2"
+
+if ! has jq; then
+	echo "'jq' command not found in PATH."
+	exit 1
+fi
+
+echo "Fetching Docker Hub token..."
+token=$(curl --silent "https://auth.docker.io/token?scope=repository:$IMAGE:pull&service=registry.docker.io" | jq -r '.token')
+
+echo -n "Fetching remote digest... "
+digest=$(curl --silent -H "Accept: application/vnd.docker.distribution.manifest.v2+json" \
+	-H "Authorization: Bearer $token" \
+	"https://registry.hub.docker.com/v2/$IMAGE/manifests/latest" | jq -r '.config.digest')
+echo "$digest"
+
+echo -n "Fetching local digest...  "
+local_digest=$(docker images -q --no-trunc $IMAGE:latest)
+echo "$local_digest"
+
+if [ "$digest" != "$local_digest" ]; then
+	echo "Update available. Executing update command..."
+	($COMMAND)
+else
+	echo "Already up to date. Nothing to do."
+fi
