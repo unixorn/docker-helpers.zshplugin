@@ -8,9 +8,9 @@ set -o pipefail
 
 function docker-ps-cleanup {
   if [[ $(uname -s) -eq "Darwin" ]]; then
-    docker ps -a --format '{{.Names}} {{.Status}}' | grep 'Exited' | awk '{print $1}' | xargs -n 1 docker rmi
+    exec docker ps -a --format '{{.Names}} {{.Status}}' | grep 'Exited' | awk '{print $1}' | xargs -n 1 docker rmi
   else
-    docker ps -a --format '{{.Names}} {{.Status}}' | grep 'Exited' | awk '{print $1}' | xargs -r -n 1 docker rmi
+    exec docker ps -a --format '{{.Names}} {{.Status}}' | grep 'Exited' | awk '{print $1}' | xargs -r -n 1 docker rmi
   fi
 }
 
