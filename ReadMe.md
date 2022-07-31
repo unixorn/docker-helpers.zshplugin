@@ -12,7 +12,7 @@
 - [Script list](#script-list)
 - [Installing](#installing)
   - [Pre-Requisites](#pre-requisites)
-  - [zgen](#zgen)
+  - [zgenom](#zgenom)
   - [Antigen](#antigen)
   - [Oh-My-Zsh](#oh-my-zsh)
 - [Other useful Docker stuff](#other-useful-docker-stuff)
