@@ -31,6 +31,7 @@ Command | Description | Credit
 ------- | ----------- | ------
 | `boot2docker-timesync` | boot2docker drifts out of time sync every time my MacBook Pro sleeps. Run this to resync. |
 | `dive` | Wrapper script that calls wagoodman/dive to analyze a container image. |
+| `docker-check-for-image-update` | Check if a given image has been updated, and if so, run a command. | Matthias Lohr's [blog](https://mlohr.com/check-for-docker-image-updates/) |
 | `docker-container-volumes` | List the volumes attached to a container. | [http://www.tech-d.net/2014/05/05/docker-quicktip-5-backing-up-volumes/](http://www.tech-d.net/2014/05/05/docker-quicktip-5-backing-up-volumes/))
 | `docker-create-backup-container` | Creates a container with all the volumes from all the containers on the host. | From [http://www.tech-d.net/2014/05/05/docker-quicktip-5-backing-up-volumes/](http://www.tech-d.net/2014/05/05/docker-quicktip-5-backing-up-volumes/)
 | `docker-delete-stopped-containers` | Cleans up stale stopped containers. |
