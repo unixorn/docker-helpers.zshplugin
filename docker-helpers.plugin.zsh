@@ -1,4 +1,4 @@
-# Copyright 2014-2021 Joseph Block <jpb@unixorn.net>
+# Copyright 2014-2022 Joseph Block <jpb@unixorn.net>
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -84,8 +84,16 @@ then
 
   # helpers for starting a container with access to the current directory
 
+  d-alpine() {
+    docker run -v $(pwd):/shared --rm -it alpine:latest /bin/sh
+  }
+
   d-busybox() {
     docker run -v $(pwd):/shared --rm -it busybox:latest /bin/sh
+  }
+
+  d-debian() {
+    docker run -v $(pwd):/shared --rm -it debian:latest /bin/bash
   }
 
   d-centos() {
@@ -103,7 +111,7 @@ then
   d-ubuntu() {
     docker run -v $(pwd):/shared --rm -it ubuntu:14.04 /bin/bash
   }
-  
+
 fi
 
 if (which docker-compose &> /dev/null)

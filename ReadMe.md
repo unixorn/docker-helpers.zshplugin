@@ -12,7 +12,7 @@
 - [Script list](#script-list)
 - [Installing](#installing)
   - [Pre-Requisites](#pre-requisites)
-  - [zgen](#zgen)
+  - [zgenom](#zgenom)
   - [Antigen](#antigen)
   - [Oh-My-Zsh](#oh-my-zsh)
 - [Other useful Docker stuff](#other-useful-docker-stuff)
@@ -58,9 +58,9 @@ Command | Description | Credit
 
 `jq` - Install with `brew install jq`
 
-### zgen
+### zgenom
 
-Add `zgen load unixorn/docker-helpers.zshplugin` to your `.zshrc` wherever you're loading your other plugins.
+Add `zgenom load unixorn/docker-helpers.zshplugin` to your `.zshrc` wherever you're loading your other plugins.
 
 ### Antigen
 
