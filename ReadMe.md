@@ -58,9 +58,9 @@ Command | Description | Credit
 
 `jq` - Install with `brew install jq`
 
-### zgen
+### zgenom
 
-Add `zgen load unixorn/docker-helpers.zshplugin` to your `.zshrc` wherever you're loading your other plugins.
+Add `zgenom load unixorn/docker-helpers.zshplugin` to your `.zshrc` wherever you're loading your other plugins.
 
 ### Antigen
 
