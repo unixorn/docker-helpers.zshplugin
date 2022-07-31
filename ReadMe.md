@@ -1,5 +1,10 @@
 # Docker helper scripts
 
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+![Awesomebot](https://github.com/unixorn/docker-helpers.zshplugin/actions/workflows/awesomebot.yml/badge.svg)
+![mega-linter](https://github.com/unixorn/docker-helpers.zshplugin/actions/workflows/mega-linter.yml/badge.svg)
+[![GitHub stars](https://img.shields.io/github/stars/unixorn/docker-helpers.zshplugin.svg)](https://github.com/unixorn/docker-helpers.zshplugin/stargazers)
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
@@ -7,7 +12,7 @@
 - [Script list](#script-list)
 - [Installing](#installing)
   - [Pre-Requisites](#pre-requisites)
-  - [zgen](#zgen)
+  - [zgenom](#zgenom)
   - [Antigen](#antigen)
   - [Oh-My-Zsh](#oh-my-zsh)
 - [Other useful Docker stuff](#other-useful-docker-stuff)
@@ -29,7 +34,6 @@ Command | Description | Credit
 | `docker-container-volumes` | List the volumes attached to a container. | [http://www.tech-d.net/2014/05/05/docker-quicktip-5-backing-up-volumes/](http://www.tech-d.net/2014/05/05/docker-quicktip-5-backing-up-volumes/))
 | `docker-create-backup-container` | Creates a container with all the volumes from all the containers on the host. | From [http://www.tech-d.net/2014/05/05/docker-quicktip-5-backing-up-volumes/](http://www.tech-d.net/2014/05/05/docker-quicktip-5-backing-up-volumes/)
 | `docker-delete-stopped-containers` | Cleans up stale stopped containers. |
-| `docker-enter` | Install/Run jpetazzo's `nsenter`. |
 | `docker-here` | Builds an ephemeral container, runs it with the parameters you pass `docker-here`, then deletes the ephemeral container. |
 | `docker-ip` | Gets the pid of a running container. |
 | `docker-last` | Print the id of the last container you ran. |
@@ -54,9 +58,9 @@ Command | Description | Credit
 
 `jq` - Install with `brew install jq`
 
-### zgen
+### zgenom
 
-Add `zgen load unixorn/docker-helpers.zshplugin` to your `.zshrc` wherever you're loading your other plugins.
+Add `zgenom load unixorn/docker-helpers.zshplugin` to your `.zshrc` wherever you're loading your other plugins.
 
 ### Antigen
 
