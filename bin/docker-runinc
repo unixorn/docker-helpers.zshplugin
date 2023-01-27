@@ -4,9 +4,21 @@
 #
 # Use fzf to select a running container and run a command in it
 
-runinc() {
+function fail() {
+  printf '%s\n' "$1" >&2  ## Send message to stderr. Exclude >&2 if you don't want it that way.
+  exit "${2-1}"  ## Return a code specified by $2 or 1 by default.
+}
+
+function has() {
+  # Check if a command is in $PATH
+  which "$@" > /dev/null 2>&1
+}
+
+# shellcheck disable=SC2086,SC2162,SC2199,SC2124
+function runinc() {
   export FZF_DEFAULT_OPTS='--height 90% --reverse --border'
-  local container=$(docker ps --format '{{.Names}} => {{.Image}}' | fzf-tmux --reverse --multi | awk -F '\\=>' '{print $1}')
+  local container
+  container=$(docker ps --format '{{.Names}} => {{.Image}}' | fzf-tmux --reverse --multi | awk -F '\\=>' '{print $1}')
   if [[ $container != '' ]]; then
     echo -e "\n  \033[1mDocker container:\033[0m" $container
     read -e -p $'  \e[1mOptions: \e[0m' -i "-it" options
@@ -24,4 +36,9 @@ runinc() {
   export FZF_DEFAULT_OPTS=""
 }
 
-runinc $@
+# shellcheck disable=SC2068
+if has fzf; then
+  runinc $@
+else
+  fail "Can't find 'fzf' in your PATH"
+fi
