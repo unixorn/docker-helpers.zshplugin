@@ -43,6 +43,7 @@ Command | Description | Credit
 | `docker-ps-cleanup` | Cleans up `docker ps` output by deleting all exited containers. |
 | `docker-purge-unnamed-images` | Cleans up image cruft by deleting all the images that aren't named. |
 | `docker-remove-dangling-images` | Cleans up image cruft by deleting all dangling images. |
+| `docker-runc` | Uses [fzf](https://github.com/junegunn/fzf) to select an image and run a command in it. |
 | `docker-runinc` | Uses [fzf](https://github.com/junegunn/fzf) to select a running container and run a command inside it. |
 | `docker-shell` | Runs a shell inside a container with `pwd` mounted as `/pwd`. Defaults to bash inside debian:buster-slim, reads shell & image name from `STANDARD_DOCKER_COMMAND` and `STANDARD_DOCKER_IMAGE` or `$1` and `$2`. |
 | `docker-showipc` | Show the IP of a running docker container. |
@@ -57,7 +58,10 @@ Command | Description | Credit
 
 ### Pre-Requisites
 
-`jq` - Install with `brew install jq`
+No matter how you choose to install the plugin, it has the following pre-requisites:
+
+- `jq` - Install with `brew install jq`
+- `fzf` - Install with `brew install fzf`
 
 ### zgenom
 
